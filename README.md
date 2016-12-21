@@ -1,6 +1,6 @@
                         
 ##  Ionic eCommerce
-	I have developed this application in Ionic using Wordpress WooCommerce API, Third Party Plugins, and many more.
+I have developed this application in Ionic using Wordpress WooCommerce API, Third Party Plugins, and many more.
 
 
 ## To install all node dependency modules
