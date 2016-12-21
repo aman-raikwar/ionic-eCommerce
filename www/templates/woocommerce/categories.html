@@ -1,0 +1,26 @@
+<ion-view title="Categories" id="pageCategories">
+    <div class="bar bar-subheader">
+        <div class=" button-bar">
+            <button class="button button-light button-android" ng-class="{ 'button\-positive': demo == '{{category.slug}}' }" ng-click="setPlatform('{{category.slug}}')"
+                ng-repeat="category in mainCategories">
+                {{category.name}}
+            </button>
+        </div>
+    </div>
+    <ion-content padding="true" class="has-header has-subheader container-bg">
+        <ion-list>
+            <label class="item item-input item-select">
+                <div class="input-label">Main Categories</div>
+                <select>
+                    <option ng-repeat="category in mainCategories">{{category.name}}</option>
+                </select>
+            </label>
+        </ion-list>
+        <br/>
+        <ion-list>
+            <ion-item ng-repeat="category in categories">
+                {{category.name}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

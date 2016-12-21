@@ -1,0 +1,28 @@
+<ion-view view-title="My Profile">
+    <div class='bar bar-subheader bar-positive'>
+        <h1 class="title">You can edit your Profile from here</h1>
+    </div>
+    <ion-content class="has-subheader padding">
+        <div class="list list-inset">
+            <div class="item item-divider">
+                Personal Information
+            </div>
+            <label class="item item-input">
+                <span class="input-label">First Name</span>
+                <input type="text" ng-model="newUser.first_name">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Last Name</span>
+                <input type="text" ng-model="newUser.last_name">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Email</span>
+                <input type="email" ng-model="newUser.email" ng-blur="checkUserEmail(newUser.email)">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="password" ng-model="newUser.password">
+            </label>
+        </div>
+    </ion-content>
+</ion-view>

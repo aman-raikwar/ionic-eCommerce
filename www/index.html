@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Ionic eCommerce</title>
+    <link rel="icon" type="image/png" href="img/ionic.png">
+    <link rel="manifest" href="manifest.json">
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+    <link rel="stylesheet" href="lib/ionic/css/ionic.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!-- ionic/angularjs js -->
+    <script type="text/javascript" src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- your app's js -->
+    <script type="text/javascript" src="lib/ngStorage.min.js"></script>
+    <script type="text/javascript" src="lib/wcapi.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers/auth.js"></script>
+    <script type="text/javascript" src="js/controllers/product.js"></script>
+    <script type="text/javascript" src="js/controllers/category.js"></script>
+    <script type="text/javascript" src="js/controllers/faqs.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/services.js"></script>
+</head>
+
+<body ng-app="starter">
+    <ion-nav-view></ion-nav-view>
+</body>
+
+</html>

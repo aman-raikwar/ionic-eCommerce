@@ -1,0 +1,37 @@
+<ion-view view-title="FAQs">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon ion-android-more-vertical" ng-click="showSettings($event)"></button>
+        <!--<button class="button button-icon ion-compose" ng-click="modal.show()"></button>-->
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header container-bg">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+        <div class="list">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search" ng-model="search.$">
+            </label>
+        </div>
+        <ion-list>
+            <ion-item ng-repeat="faq in faqs | filter:search" href="#/app/faqs/{{faq.id}}">
+                <h2>{{faq.title}}</h2>
+                <div ng-bind-html="faq.excerpt"></div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <!--<ion-footer-bar align-title="left" class="bar-positive">
+        <div class="buttons" ng-click="showPreviousRecords()">
+            <button class="button">Previous</button>
+        </div>
+        <div class="buttons" ng-click="showNextRecords()">
+            <button class="button" align-title="right">Next</button>
+        </div>
+    </ion-footer-bar>-->
+    <ion-footer-bar class="bar-positive">
+        <button class="footer-bar-item item-left user-profile-button button button-clear" ng-click="showPreviousRecords()" ng-show="previousExists==true">
+            <i class="icon ion-chevron-left"></i>                
+        </button>
+        <button class="footer-bar-item item-right button button-clear button-icon" ng-click="showNextRecords()" ng-show="nextExists==true">
+            <i class="icon ion-chevron-right"></i>
+        </button>
+    </ion-footer-bar>
+</ion-view>

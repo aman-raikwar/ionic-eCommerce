@@ -1,0 +1,21 @@
+<ion-view id="pageProducts">
+    <ion-nav-title>Browse Products</ion-nav-title>
+    <ion-content padding="true" class="has-header container-bg">
+        <ion-refresher pulling-text="Refresh" on-refresh="doRefresh()"></ion-refresher>
+        <ion-list class="product-list" ng-init="getProducts()">
+            <ion-item ng-repeat="product in products" ui-sref="app.productDetail({productId : product.id})">
+                <img class="product-img" ng-src="{{product.featured_src}}" />
+                <h1 class="product-title">{{product.title}}</h1>
+                <div class="product-price" ng-bind-html="product.price_html"></div>
+                <button class="button button-assertive add-to-cart-btn" ng-click="addToCart(product); $event.stopPropagation();">
+                    <i class="icon ion-android-cart"></i>
+                </button>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="canLoadMore" immediate-check="false"></ion-infinite-scroll>
+    </ion-content>
+    <ion-footer-bar class="bar-positive product-list-footer">
+        <button class="button button-icon icon ion-ios-list-outline" ng-click="productFilter()">  Filter</button>
+        <button class="button button-icon icon ion-ios-list-outline" ng-click="productSort()">  Sort</button>
+    </ion-footer-bar>
+</ion-view>
