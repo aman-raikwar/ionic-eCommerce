@@ -7,93 +7,104 @@
             <div class="item item-divider">
                 Personal Information
             </div>
-            <label class="item item-input">
+            <label class="item item-input item-floating-label">
                 <span class="input-label">First Name</span>
-                <input type="text" ng-model="newUser.first_name">
+                <input type="text" ng-model="newUser.first_name" placeholder="First Name" />
             </label>
-            <label class="item item-input">
+            <label class="item item-input item-floating-label">
                 <span class="input-label">Last Name</span>
-                <input type="text" ng-model="newUser.last_name">
+                <input type="text" ng-model="newUser.last_name" placeholder="Last Name" />
             </label>
-            <label class="item item-input">
+            <label class="item item-input item-floating-label">
                 <span class="input-label">Email</span>
-                <input type="email" ng-model="newUser.email" ng-blur="checkUserEmail(newUser.email)">
+                <input type="email" ng-model="newUser.email" ng-blur="checkUserEmail(newUser.email)" placeholder="Email" />
             </label>
-            <label class="item item-input">
+            <label class="item item-input item-floating-label">
                 <span class="input-label">Password</span>
-                <input type="password" ng-model="newUser.password">
+                <input type="password" ng-model="newUser.password" placeholder="Password" />
             </label>
             <div class="item item-divider">
                 Billing Information
             </div>
-            <label class="item item-input">
+            <label class="item item-input item-floating-label">
                 <span class="input-label">Address Line 1</span>
-                <input type="text" ng-model="newUser.billing_address.address1">
+                <input type="text" ng-model="newUser.billing_address.address1" placeholder="Address Line 1" />
             </label>
-            <label class="item item-input">
+            <label class="item item-input item-floating-label">
                 <span class="input-label">Address Line 2</span>
-                <input type="text" ng-model="newUser.billing_address.address2">
+                <input type="text" ng-model="newUser.billing_address.address2" placeholder="Address Line 2" />
             </label>
             <label class="item item-input item-select">
                 <span class="input-label">Country</span>
                 <select ng-model="newUser.billing_address.country">
-                    <option selected>India</option>
-                    <option>China</option>
-                    <option>Japan</option>
+                    <option>India</option>
+                    <option>United States</option>
                 </select>
             </label>
             <label class="item item-input item-select">
                 <span class="input-label">State</span>
                 <select ng-model="newUser.billing_address.state">
                     <option>Uttar Pradesh</option>
-                    <option selected>New Delhi</option>
+                    <option>New Delhi</option>
                     <option>Karnataka</option>
                 </select>
             </label>
             <label class="item item-input item-select">
                 <span class="input-label">City</span>
                 <select ng-model="newUser.billing_address.city">
+                    <option>Indore</option>
+                    <option>Jabalpur</option>
                     <option>Mumbai</option>
-                    <option selected>New Delhi</option>
+                    <option>New Delhi</option>
                     <option>Chennai</option>
                     <option>Kolkata</option>
                     <option>Bengaluru</option>
                 </select>
             </label>
-            <label class="item item-input">
+            <label class="item item-input item-floating-label">
                 <span class="input-label">Pincode</span>
-                <input type="text" ng-model="newUser.billing_address.postcode">
+                <input type="text" ng-model="newUser.billing_address.postcode" placeholder="Pincode" />
             </label>
-            <label class="item item-input">
+            <label class="item item-input item-floating-label">
                 <span class="input-label">Phone</span>
-                <input type="text" ng-model="newUser.billing_address.phone">
+                <input type="text" ng-model="newUser.billing_address.phone" placeholder="Phone" />
             </label>
+            <!-- <ul class="list">
+                <li class="item item-toggle">
+                    Shipping address is same
+                    <label class="toggle toggle-positive">
+                        <input type="checkbox" ng-model="newUser.billingToShipping" ng-change="switchBillingToShipping()" />
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </li>
+            </ul> -->
             <ion-checkbox ng-model="newUser.billingToShipping" ng-change="switchBillingToShipping()">
                 Shipping address is same
             </ion-checkbox>
             <div class="item item-divider" ng-hide="newUser.billingToShipping">
                 Shipping Information
             </div>
-            <label class="item item-input" ng-hide="newUser.billingToShipping">
+            <label class="item item-input item-floating-label" ng-hide="newUser.billingToShipping">
                 <span class="input-label">Address Line 1</span>
-                <input type="text" ng-model="newUser.shipping_address.address1">
+                <input type="text" ng-model="newUser.shipping_address.address1" placeholder="Address Line 1" />
             </label>
-            <label class="item item-input" ng-hide="newUser.billingToShipping">
+            <label class="item item-input item-floating-label" ng-hide="newUser.billingToShipping">
                 <span class="input-label">Address Line 2</span>
-                <input type="text" ng-model="newUser.shipping_address.address2">
+                <input type="text" ng-model="newUser.shipping_address.address2" placeholder="Address Line 2" />
             </label>
             <label class="item item-input item-select" ng-hide="newUser.billingToShipping">
                 <span class="input-label">Country</span>
                 <select ng-model="newUser.shipping_address.country">
-                    <option selected>India</option>
-                    <option>China</option>
-                    <option>Japan</option>
+                    <option>India</option>
+                    <option>United States</option>
                 </select>
             </label>
             <label class="item item-input item-select" ng-hide="newUser.billingToShipping">
                 <span class="input-label">State</span>
                 <select ng-model="newUser.shipping_address.state">
-                    <option selected>Uttar Pradesh</option>
+                    <option>Uttar Pradesh</option>
                     <option>New Delhi</option>
                     <option>Karnataka</option>
                 </select>
@@ -101,19 +112,21 @@
             <label class="item item-input item-select" ng-hide="newUser.billingToShipping">
                 <span class="input-label">City</span>
                 <select ng-model="newUser.shipping_address.city">
+                    <option>Indore</option>
+                    <option>Jabalpur</option>
                     <option>Moradabad</option>
-                    <option selected>Noida</option>
+                    <option>Noida</option>
                     <option>Ghaziabad</option>
                     <option>Agra</option>
                 </select>
             </label>
-            <label class="item item-input" ng-hide="newUser.billingToShipping">
+            <label class="item item-input item-floating-label" ng-hide="newUser.billingToShipping">
                 <span class="input-label">Pincode</span>
-                <input type="text" ng-model="newUser.shipping_address.postcode">
+                <input type="text" ng-model="newUser.shipping_address.postcode" placeholder="Pincode" />
             </label>
-            <label class="item item-input" ng-hide="newUser.billingToShipping">
+            <label class="item item-input item-floating-label" ng-hide="newUser.billingToShipping">
                 <span class="input-label">Phone</span>
-                <input type="text" ng-model="newUser.shipping_address.phone">
+                <input type="text" ng-model="newUser.shipping_address.phone" placeholder="Phone" />
             </label>
             <div class="button-bar">
                 <button class="button button-assertive button-block button-outline">Cancel</button>

@@ -16,7 +16,7 @@
     <ion-side-menu side="left">
         <ion-content padding="false" style="top:0px !important;" class="side-menu-left side-menu-gradient">
             <div class="spacer" style="width: 268px; height: 32px;"></div>
-            <div class="profile-image">
+            <div class="profile-image" ng-if="userData">
                 <img ng-src="{{userData.data.user.avatar ? userData.data.user.avatar : 'img/blank.png' }}" width="40%" height="auto" style="display: block;margin-left: auto;margin-right: auto;overflow: hidden;height: 120px;width: 120px;">
             </div>
             <h3 id="menu-heading1" style="color:#FFFFFF;font-weight:300;text-align:center;">{{userData.data.user.firstname + ' ' + userData.data.user.lastname}}</h3>
@@ -28,14 +28,14 @@
                 <ion-item class="item-icon-left  side-menu-item" id="menu-list-item1" ui-sref="app.categories" menu-close="">
                     <i class="icon ion-grid"></i> Categories
                 </ion-item>
-                <ion-item class="item-divider">Categories</ion-item>
-                <ion-item ng-repeat="cat in mainCategories" class="item-icon-left  side-menu-item" menu-close ui-sref="app.category({categoryId: cat.slug})">
+                <!-- <ion-item class="item-divider">Categories</ion-item> -->
+                <!-- <ion-item ng-repeat="cat in mainCategories" class="item-icon-left  side-menu-item" menu-close ui-sref="app.category({categoryId: cat.slug})">
                     <i class="icon ion-android-arrow-forward"></i> {{cat.name}}
-                </ion-item>
+                </ion-item> -->
                 <ion-item class="item-icon-left  side-menu-item" id="menu-list-item1" ui-sref="app.faqs" menu-close="">
                     <i class="icon ion-help"></i> FAQs
                 </ion-item>
-                <ion-item class="item-divider">Account</ion-item>
+                <!-- <ion-item class="item-divider">Account</ion-item> -->
                 <ion-item class="item-icon-left side-menu-item" ui-sref="app.login" ng-if="!userData" menu-close>
                     <i class="icon ion-log-in"></i> Login
                 </ion-item>

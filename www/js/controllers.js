@@ -110,6 +110,7 @@ angular.module('starter.controllers', ['app.productsController', 'app.categories
             $state.go("app.login")
     }
 
+    /*
     var Woocommerce = WC.WC();
 
     Woocommerce.get('products/categories', function(err, data, res) {
@@ -123,6 +124,7 @@ angular.module('starter.controllers', ['app.productsController', 'app.categories
             }
         })
     });
+    */
 
 })
 
@@ -215,7 +217,7 @@ angular.module('starter.controllers', ['app.productsController', 'app.categories
                         text: 'OK',
                         type: 'button-assertive',
                         onTap: function(e) {
-                            $localStorage.cart = undefined;
+                            $localStorage.cart = [];
                             $ionicHistory.nextViewOptions({
                                 disableAnimate: true,
                                 disableBack: true
